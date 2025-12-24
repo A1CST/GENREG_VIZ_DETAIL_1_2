@@ -50,7 +50,7 @@ This approach mirrors biological evolution: organisms that survive and reproduce
 - Variable playback speed (0.25x - 4x)
 - Smooth interpolation between discrete states
 
-### 🧠 Dual-Path Neural Architecture
+###  Dual-Path Neural Architecture
 **Protein Network (Trust Computation)**
 - 6 specialized protein types:
   - **Sensors**: Normalize environmental signals
@@ -65,7 +65,7 @@ This approach mirrors biological evolution: organisms that survive and reproduce
 - Processes 11 sensory inputs (position, food direction, walls, energy)
 - Outputs movement probabilities (UP/DOWN/LEFT/RIGHT)
 
-### 📊 Real-Time Visualizations
+###  Real-Time Visualizations
 
 **Snake Game Panel**
 - Three evolutionary stages shown simultaneously
@@ -501,7 +501,7 @@ A: Technically yes—you could freeze the protein network and train the neural c
 
 <div align="center">
 
-**Built with 🧬 by evolutionary enthusiasts**
+**Built by AsyncVibes**
 
 [⬆ Back to Top](#genreg-evolution-visualizer)
 
