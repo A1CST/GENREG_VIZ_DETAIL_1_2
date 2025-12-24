@@ -2,7 +2,7 @@
 
 <div align="center">
 
-![GENREG Visualizer](assets/Screenshot 2025-12-23 185934.png)
+![GENREG Visualizer](/assets/Screenshot 2025-12-23 185934.png)
 
 **Interactive visualization of real evolutionary machine learning**  
 *Demonstration of 500 generations evolved with official GENREG proteins*
