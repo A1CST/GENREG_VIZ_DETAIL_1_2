@@ -1,0 +1,29 @@
+{
+  "population_size": 50,
+  "total_generations": 500,
+  "elite_rate": 0.1,
+  "crossover_rate": 0.4,
+  "mutation_rate": 0.05,
+  "mutation_scale": 0.2,
+  "trust_inheritance": 0.05,
+  "trust_weight": 0.7,
+  "stability_weight": 0.3,
+  "grid_size": 10,
+  "games_per_evaluation": 3,
+  "base_energy": 25,
+  "energy_per_food": 2,
+  "num_signals": 11,
+  "nn_hidden_size": 32,
+  "nn_output_size": 4,
+  "num_sensor_proteins": 11,
+  "num_processing_proteins": 6,
+  "num_trust_proteins": 3,
+  "sample_interval": 10,
+  "exemplar_generations": [
+    1,
+    50,
+    100,
+    250,
+    500
+  ]
+}
