@@ -4,7 +4,8 @@
 
 ![GENREG Visualizer](screenshot.png)
 
-**An interactive visualization of evolutionary machine learning without backpropagation**
+**Interactive visualization of real evolutionary machine learning**  
+*Demonstration of 500 generations evolved with official GENREG proteins*
 
 [![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
 [![Pygame](https://img.shields.io/badge/pygame-2.5.0+-green.svg)](https://www.pygame.org/)
@@ -16,16 +17,23 @@
 
 ---
 
+> ###  Important: Demonstration Repository
+> This is a **visualization-only repository**. The evolution you'll see was pre-computed using the **official GENREG protein system** (not included). This demonstrates real evolutionary learning results, but you cannot run new evolution or modify the training system. Perfect for education, exploration, and understanding GENREG principles!
+
+---
+
 ## Overview
 
-GENREG (Genetic Regulation) Evolution Visualizer is an educational tool that demonstrates how **trust-based evolutionary selection** can replace gradient descent in machine learning. Instead of training neural networks through backpropagation, GENREG evolves populations of organisms using biological principles: mutation, crossbreeding, and selection based on "trust scores."
+GENREG (Genetic Regulation) Evolution Visualizer is an **educational demonstration tool** that shows how **trust-based evolutionary selection** can replace gradient descent in machine learning. This visualizer replays pre-computed evolution data from the official GENREG system, making the abstract principles of evolutionary learning concrete and observable.
 
-This visualizer makes the abstract concrete through three synchronized panels:
-- 🎮 **Snake Game Evolution**: Watch behavior progress from random wall-crashing to intelligent food-seeking
-- 🧬 **Protein Cascade**: See real-time neural activation as organisms process sensory information
-- 👥 **Population Genetics**: Observe mutations, crossbreeding, and natural selection in action
+> ** Important Note:** This repository contains a **visualization-only demonstration**. The evolution was pre-computed using the **official GENREG protein system** (not included in this repository). The visualizer replays this saved evolutionary history to demonstrate the concepts. This is an educational tool to understand GENREG principles, not a standalone training system.
 
-### Why GENREG?
+This visualizer makes evolutionary learning concrete through three synchronized panels:
+-  **Snake Game Evolution**: Watch behavior progress from random wall-crashing to intelligent food-seeking (real evolved agents!)
+-  **Protein Cascade**: See real-time neural activation from actual GENREG protein networks
+-  **Population Genetics**: Observe mutations, crossbreeding, and natural selection that actually occurred
+
+### What is GENREG?
 
 Traditional neural networks use:
 - **Gradient descent** to optimize loss functions
@@ -40,19 +48,36 @@ GENREG uses:
 
 This approach mirrors biological evolution: organisms that survive and reproduce pass on their genes. No explicit "teaching signal" required—just selection pressure.
 
+### What's Included vs. What's Not
+
+**✅ Included in this repository:**
+- Complete Pygame visualization system
+- Pre-computed evolution data (500 generations)
+- Interactive playback with timeline control
+- Protein network visualization
+- Educational documentation
+
+**❌ NOT included (official GENREG system):**
+- Full protein system implementation
+- Evolution engine (pre-computation code)
+- Training/evolution capabilities
+- Official GENREG checkpoint integration
+
+The data you see was generated using the real GENREG protein architecture, but this visualizer is **playback-only** for demonstration purposes.
+
 ---
 
 ## Features
 
-### 🎬 Pre-Computed Playback System
-- Evolution runs offline, visualization replays saved state
+###  Pre-Computed Playback System
+- **Real evolution data** from official GENREG protein system (500 generations)
 - Timeline scrubbing with generation markers
 - Variable playback speed (0.25x - 4x)
-- Smooth interpolation between discrete states
+- Smooth interpolation between discrete evolutionary snapshots
 
-###  Dual-Path Neural Architecture
-**Protein Network (Trust Computation)**
-- 6 specialized protein types:
+###  Authentic GENREG Architecture Visualization
+**Protein Network (Trust Computation)** - *As used in actual evolution*
+- 6 specialized protein types evolved through natural selection:
   - **Sensors**: Normalize environmental signals
   - **Comparators**: Compare inputs (diff/ratio/greater/less)
   - **Trend Detectors**: Track velocity and momentum
@@ -60,10 +85,11 @@ This approach mirrors biological evolution: organisms that survive and reproduce
   - **Gates**: Conditional activation with hysteresis
   - **Trust Modifiers**: Convert signals to fitness deltas
 
-**Neural Controller (Action Selection)**
+**Neural Controller (Action Selection)** - *Evolved alongside proteins*
 - Standard feedforward network (11 → 32 → 4)
 - Processes 11 sensory inputs (position, food direction, walls, energy)
 - Outputs movement probabilities (UP/DOWN/LEFT/RIGHT)
+- Weights evolved (not trained!) through genetic operators
 
 ###  Real-Time Visualizations
 
@@ -124,52 +150,45 @@ numpy>=1.24.0
 
 ## Usage
 
-### Interactive Menu Mode
+### Quick Start (Demonstration Mode)
+
 ```bash
+# Clone the repository
+git clone https://github.com/yourusername/genreg-visualizer.git
+cd genreg-visualizer
+
+# Install dependencies
+pip install -r requirements.txt
+
+# Run the visualizer (uses included pre-computed data)
 python main.py
 ```
-Launches an interactive menu with options to:
-1. Load existing checkpoint files (from official GENREG training)
-2. Use pre-generated simulation data
-3. Generate new evolution from scratch
 
-### Command-Line Modes
+The visualizer will automatically load the pre-computed evolution data and start playback.
 
-**Generate new evolution data:**
-```bash
-python main.py --simulate
-```
+### What You'll See
 
-**Visualize existing data:**
+The included dataset contains:
+- **500 generations** of evolution using official GENREG proteins
+- **50 organisms** per generation competing through natural selection
+- **Real behavioral progression** from random to intelligent play
+- **Authentic protein activations** from the actual GENREG system
+
+> **Note:** This is a **demonstration visualizer only**. You cannot run new evolution or modify the protein system. The data you're viewing was generated using the proprietary GENREG implementation, which is not included in this repository.
+
+### Command-Line Options
+
+**Run visualizer with pre-computed data:**
 ```bash
 python main.py --visualize
 ```
 
-**Load specific checkpoint:**
-```bash
-python main.py --checkpoint path/to/checkpoint_gen_00500.pkl
-```
-
-**Custom data directory:**
+**Specify custom data directory:**
 ```bash
 python main.py --data-dir my_simulation_data
 ```
 
-### Configuration
-
-Edit `config.py` to customize evolution parameters:
-
-```python
-SIMULATION_CONFIG = {
-    'population_size': 50,          # Number of organisms
-    'total_generations': 500,       # Evolution duration
-    'mutation_rate': 0.05,          # 5% mutation probability
-    'elite_rate': 0.10,             # 10% elite preservation
-    'crossover_rate': 0.40,         # 40% sexual reproduction
-    'grid_size': 10,                # Snake game grid (10x10)
-    'games_per_evaluation': 3,      # Games per fitness eval
-}
-```
+> **Removed features:** `--simulate` and `--checkpoint` options are not available in the demonstration version. These required the full GENREG system.
 
 ---
 
@@ -203,135 +222,168 @@ SIMULATION_CONFIG = {
 
 ## Architecture
 
-### System Design
+### System Design (Demonstration Version)
 
 ```
 ┌─────────────────────────────────────────────────────────┐
-│                   GENREG VISUALIZER                      │
+│              GENREG VISUALIZER (DEMO)                    │
 ├─────────────────────────────────────────────────────────┤
-│  Phase 1: Pre-Computation (Offline)                     │
+│  Phase 1: Pre-Computation (COMPLETED - Not Included)    │
 │  ┌────────────────────────────────────────────┐        │
-│  │ - Run 500 generations of evolution         │        │
-│  │ - Each genome plays Snake 3x               │        │
-│  │ - Log protein activations, trust scores    │        │
-│  │ - Record genetic events (mutations, etc)   │        │
-│  │ - Identify behavioral stage exemplars      │        │
+│  │ ✅ Run 500 generations (OFFICIAL GENREG)   │        │
+│  │ ✅ Evolved proteins via natural selection  │        │
+│  │ ✅ Logged all activations & genetic events │        │
+│  │ ✅ Identified behavioral milestones        │        │
+│  │ ✅ Saved to JSON/NumPy format              │        │
 │  └────────────────────────────────────────────┘        │
 │                        ↓                                 │
-│  Phase 2: Playback (Interactive)                        │
+│  Phase 2: Playback (THIS REPOSITORY)                    │
 │  ┌────────────────────────────────────────────┐        │
-│  │ - Load pre-computed JSON/NumPy logs        │        │
-│  │ - Interpolate between discrete snapshots   │        │
-│  │ - Render synchronized 3-panel view         │        │
-│  │ - User controls timeline, highlights       │        │
+│  │  Included: Pre-computed data files       │        │
+│  │  Pygame visualization engine             │        │
+│  │  Timeline control & scrubbing            │        │
+│  │  Interactive protein network explorer    │        │
+│  │  Population genetics animations          │        │
 │  └────────────────────────────────────────────┘        │
 └─────────────────────────────────────────────────────────┘
 ```
 
-### File Structure
+### What's Included in This Repository
 
 ```
 genreg-visualizer/
-├── main.py                 # Entry point, menu system
-├── config.py               # All configuration parameters
-├── data_structures.py      # Genome, proteins, neural network classes
-├── simulation.py           # Evolution engine, Snake game logic
-├── visualizer.py           # Pygame rendering, UI, animations
-├── requirements.txt        # Python dependencies
-└── simulation_data/        # Generated during pre-computation
-    ├── evolution_log.json          # Generation snapshots
-    ├── genetic_events.json         # Mutations, crossbreeds, culls
-    ├── stage_exemplars.json        # Early/Mid/Late examples
-    ├── protein_activations.npz     # Neural activation timeseries
-    └── config.json                 # Simulation parameters
+├── main.py                 # Entry point (playback only)
+├── config.py               # Visualization parameters
+├── visualizer.py           # Pygame rendering engine
+├── requirements.txt        # Dependencies (pygame, numpy)
+│
+├── simulation_data/        # 📦 PRE-COMPUTED (from official GENREG)
+│   ├── evolution_log.json          # 500 generation snapshots
+│   ├── genetic_events.json         # Mutations, crossbreeds, culls
+│   ├── stage_exemplars.json        # Early/Mid/Late behavioral examples
+│   ├── protein_activations.npz     # Real protein activation timeseries
+│   └── config.json                 # Original evolution parameters
+│
+└── [EXCLUDED - Official GENREG system]
+    ├── Full protein implementation
+    ├── Evolution engine
+    ├── Training/simulation code
+    └── Checkpoint generation
 ```
 
-### Data Structures
+### Data Authenticity
 
-**Genome** (Organism DNA)
-- List of Protein objects with parameters
-- NeuralController with weight matrices
-- Trust score history
-- Genetic lineage information
+The included `simulation_data/` was generated using:
+- **Official GENREG protein system** (6 protein types with evolved parameters)
+- **Natural selection** over 500 generations (no human tuning)
+- **Real trust-based fitness** (not hand-crafted reward functions)
+- **Genetic operators** (mutation, crossover, elite preservation)
 
-**Protein Types**
-1. `SensorProtein`: Normalizes raw signals (min/max scaling, running stats)
-2. `ComparatorProtein`: Compares two inputs (difference, ratio, boolean)
-3. `TrendProtein`: Tracks delta between timesteps (velocity/momentum)
-4. `IntegratorProtein`: Exponentially-weighted accumulation
-5. `GateProtein`: Threshold-based switching with hysteresis
-6. `TrustModifierProtein`: Maps signal to trust delta with saturation
+This is **genuine evolutionary data**, not a simplified demo or simulation.
 
-**NeuralController**
-- Simple 2-layer MLP: Input → Hidden (ReLU) → Output (Softmax)
-- Weights evolved, not trained via gradient descent
-- Completely independent from protein trust computation
+### Data Structures (For Reference)
+
+The pre-computed data uses these structures (simplified for visualization):
+
+**Evolution Log** (`evolution_log.json`)
+- Generation-by-generation snapshots (500 total)
+- Population statistics (avg trust, best trust, diversity)
+- Organism summaries (trust scores, survival status)
+- Stage classifications (early/mid/late)
+
+**Protein Activations** (`protein_activations.npz`)
+- Timestep-by-timestep protein outputs
+- 11 sensor activations (environmental signals)
+- 12 hidden protein activations (processing layer)
+- 4 motor activations (movement decisions)
+- Trust delta per timestep
+
+**Genetic Events** (`genetic_events.json`)
+- Mutation events (which protein, parameter change)
+- Crossbreed events (parent IDs, offspring ID)
+- Cull events (eliminated organisms)
+- Elite preservation records
+
+**Stage Exemplars** (`stage_exemplars.json`)
+- Representative gameplay for Early/Mid/Late stages
+- Complete frame-by-frame recordings
+- Snake positions, food locations, scores
+- Associated protein activations
+
+> **Note:** The actual protein classes and neural network implementation are not included in this repository. The data structures here are for visualization purposes only.
 
 ---
 
-## How GENREG Works
+## Understanding What You're Seeing
 
-### Evolution Loop (Simplified)
+### The Evolution That Happened (Pre-Computed)
 
-```python
-for generation in range(500):
-    # 1. Evaluate fitness: each genome plays Snake
-    for genome in population:
-        trust_score = play_snake_games(genome)  # Protein network computes trust
-        genome.fitness = trust_score
-    
-    # 2. Selection: cull bottom 40%
-    population.sort(by=lambda g: g.fitness)
-    survivors = population[top_60%]
-    
-    # 3. Reproduction: crossbreed + mutate to refill population
-    while len(population) < population_size:
-        parent1, parent2 = select_weighted_by_trust(survivors)
-        offspring = crossbreed(parent1, parent2)
-        
-        if random() < mutation_rate:
-            mutate_random_proteins(offspring)
-        
-        population.append(offspring)
+The data you're viewing represents **500 generations of genuine evolutionary learning** using the official GENREG system. Here's what occurred:
+
+**Generation 0-150 (Early Stage)**
+- Random protein parameters
+- Chaotic, reactive behavior
+- Snake dies from wall collisions within seconds
+- Trust scores: 0.1 - 0.3 range
+
+**Generation 150-350 (Mid Stage)**  
+- Emerging patterns in protein activations
+- Exploratory wandering behavior
+- Accidental food discovery
+- Trust scores: 0.4 - 0.6 range
+
+**Generation 350-500 (Late Stage)**
+- Optimized protein parameters through selection
+- Strategic food-seeking behavior
+- Long survival times (100+ moves)
+- Trust scores: 0.7 - 0.95 range
+
+### Trust Scores: The Selection Pressure
+
+Unlike traditional ML loss functions, GENREG uses **trust scores** as evolutionary fitness:
+
+```
+Trust = accumulated signal from protein network over entire episode
 ```
 
-### Trust Score Computation
+During gameplay:
+1. Environmental signals enter protein network (distance to food, energy, position, etc.)
+2. Proteins process signals through comparators, integrators, gates
+3. Trust modifier proteins output fitness deltas based on game state
+4. Cumulative trust determines survival probability
 
-During gameplay, at each timestep:
+**High trust organisms** → survive and reproduce  
+**Low trust organisms** → culled from population
 
-```python
-# Get environmental signals
-signals = {
-    'steps_alive': 42,
-    'energy': 0.8,
-    'dist_to_food': 0.3,
-    'head_x': 5, 'head_y': 5,
-    'food_x': 7, 'food_y': 8,
-    ...
-}
+No gradients, no backpropagation—just selection pressure on trust scores.
 
-# Protein network processes signals
-protein_outputs = {}
-for protein in genome.proteins:
-    protein_outputs[protein.name] = protein.forward(signals, protein_outputs)
+### Dual-Path Architecture
 
-# Trust modifier proteins produce fitness deltas
-trust_delta = sum(protein_outputs[p] for p in trust_proteins)
+Each organism has TWO parallel systems:
 
-# Accumulate over episode
-cumulative_trust += trust_delta
-```
+**Path 1: Protein Network** (Trust Computation)
+- Processes 11 environmental signals
+- 6 protein types with evolved parameters
+- Outputs trust deltas each timestep
+- **Purpose:** Fitness signal for evolution
 
-Trust serves as the **selection pressure**: genomes with higher cumulative trust are more likely to survive and reproduce.
+**Path 2: Neural Controller** (Action Selection)
+- Same 11 inputs as proteins
+- 2-layer feedforward network (11→32→4)
+- Outputs movement probabilities
+- **Purpose:** Behavioral policy
 
-### Why "Trust" Instead of "Loss"?
+Both systems evolve together. Proteins don't control movement—they compute fitness. The neural network controls movement but has no concept of "good" or "bad" moves except through evolutionary selection.
 
-Traditional ML minimizes a loss function (lower is better). GENREG maximizes trust (higher is better). The key difference:
+### Why This Matters
 
-- **Loss**: Requires labeled data, differentiable objective, gradient computation
-- **Trust**: Emergent from gameplay, no labels needed, evolved not trained
+This demonstrates that **intelligent behavior can emerge from evolution alone**, without:
+- Labeled training data
+- Hand-crafted reward functions  
+- Gradient descent
+- Human supervision
 
-Trust represents "how much can we trust this genome to achieve goals?" It's computed bottom-up from protein activations, not imposed top-down by a human-designed loss function.
+The agents you see in the Late Stage genuinely learned to play Snake through survival pressure.
 
 ---
 
@@ -357,39 +409,55 @@ Trust represents "how much can we trust this genome to achieve goals?" It's comp
 
 ---
 
-## Advanced Features
+## Exploring the Visualization
 
-### Checkpoint Loading
+### Interactive Timeline
 
-Load genomes from official GENREG training runs:
-
-```bash
-python main.py --checkpoint checkpoint_gen_00500.pkl
-```
-
-The visualizer automatically converts external genome formats, runs demo games, and generates visualization data.
+The bottom control bar lets you explore 500 generations of evolution:
+- **Scrub** through time by clicking/dragging the timeline
+- **Jump to milestones**: Generation 0 (random), Gen 150 (emerging), Gen 500 (mastery)
+- **Speed control**: Watch evolution at 0.25x (slow-motion) to 4x (fast-forward)
+- **Stage markers**: Visual indicators show Early → Mid → Late transitions
 
 ### Protein Cascade Deep Dive
 
 Press `P` during playback to open the detailed protein network view:
-- Full network topology with all connections
-- Weight strength visualization (thicker = stronger)
-- Activation flow particles
-- Interactive pathway highlighting
+- **Full network topology** showing all 11 sensors → 12 hidden proteins → 4 motors
+- **Weight visualization**: Thicker connections = stronger weights (evolved parameters)
+- **Real-time activation**: Watch signals flow through the actual protein network
+- **Interactive pathway tracing**: Click to highlight specific information flows
 
 **Click interactions:**
-- Click any sensor (S0-S10) to trace its influence on motor outputs
-- Click any motor (M0-M3) to see which sensors contribute
-- Click hidden layer neurons (H0-H11) to isolate inputs and outputs
+- **Click Sensor (S0-S10)**: Trace how that environmental signal influences motor outputs
+- **Click Motor (M0-M3)**: See which sensors contribute to that movement decision  
+- **Click Hidden Protein (H0-H11)**: Isolate inputs and outputs to understand processing
+- **Click Background**: Restore full network view
 
-### Stage Exemplar Analysis
+This lets you reverse-engineer the evolved computation: "How does the snake decide to turn left when food is northwest?"
 
-The visualizer identifies three behavioral milestones:
-1. **Early Stage (Gen 0-150)**: Random, reactive behavior. Snake dies quickly from wall collisions.
-2. **Mid Stage (Gen 150-350)**: Exploratory behavior. Snake wanders and occasionally finds food by chance.
-3. **Late Stage (Gen 350-500)**: Strategic behavior. Snake actively pursues food and avoids obstacles.
+### Stage Analysis
 
-Each stage loops its exemplar gameplay continuously in the left panel, while the protein and population panels show the current timeline position.
+The visualizer automatically identifies three behavioral milestones:
+
+**Early Stage (Gen 0-150)**
+- **Behavior**: Random, reactive wall-crashing
+- **Trust**: 0.1 - 0.3
+- **Protein patterns**: Chaotic activations with no stable logic
+- **Example**: Snake dies within 5-10 moves
+
+**Mid Stage (Gen 150-350)**
+- **Behavior**: Exploratory wandering, accidental food discovery
+- **Trust**: 0.4 - 0.6  
+- **Protein patterns**: Emerging consistency, basic obstacle avoidance
+- **Example**: Snake collects 2-5 food items before dying
+
+**Late Stage (Gen 350-500)**
+- **Behavior**: Strategic food-seeking, long survival
+- **Trust**: 0.7 - 0.95
+- **Protein patterns**: Stable, purposeful activations
+- **Example**: Snake collects 10-25 food items with efficient pathfinding
+
+Each stage continuously loops its exemplar game in the left panel, letting you compare all three behavioral levels simultaneously.
 
 ---
 
@@ -400,50 +468,80 @@ Each stage loops its exemplar gameplay continuously in the left panel, while the
 pip install pygame numpy
 ```
 
-### "Data directory not found"
-Run simulation first:
-```bash
-python main.py --simulate
-```
+### "Data directory not found" or "Missing simulation_data/"
+Ensure you cloned the full repository including the `simulation_data/` directory with pre-computed evolution files. The repository should include:
+- `evolution_log.json` (~50-100 MB)
+- `protein_activations.npz` (~200-300 MB)
+- `genetic_events.json` (~20-30 MB)
+- Other data files
+
+If these are missing, the repository may not have been cloned completely.
 
 ### Low FPS / Performance Issues
-- Reduce `PARTICLE_COUNT` in `config.py`
-- Lower screen resolution in `config.py` (WINDOW_WIDTH, WINDOW_HEIGHT)
-- Disable particle effects in visualizer settings
+- Close other applications to free up resources
+- Reduce particle effects by editing `config.py`:
+  ```python
+  PARTICLE_COUNT = 100  # Reduce from default
+  ```
+- Lower screen resolution:
+  ```python
+  WINDOW_WIDTH = 1280   # Down from 1600
+  WINDOW_HEIGHT = 720   # Down from 900
+  ```
 
-### Checkpoint Format Errors
-Ensure checkpoint files are from compatible GENREG versions. The visualizer attempts automatic conversion but may fail on drastically different architectures.
+### Visualization looks wrong / protein network shows no connections
+Ensure you're using Python 3.8+ and the correct pygame version:
+```bash
+python --version  # Should be 3.8 or higher
+pip show pygame   # Should be 2.5.0 or higher
+```
+
+### "Can't run simulation" errors
+This is expected! The simulation engine is not included in this demonstration repository. You can only view the pre-computed evolution data.
 
 ---
 
 ## Contributing
 
-Contributions welcome! Areas for improvement:
+This is a **demonstration repository** showcasing GENREG principles. Contributions welcome for improving the visualization and educational value!
 
-- [ ] Additional protein types (e.g., oscillators, memory banks)
-- [ ] Multi-agent Snake gameplay (competitive/cooperative)
-- [ ] Export trained genomes to standard formats (ONNX, PyTorch)
-- [ ] Performance optimizations for larger populations
-- [ ] Web-based visualization (convert to JavaScript/WebGL)
-- [ ] Statistical analysis tools (convergence plots, diversity metrics)
+### Areas for Enhancement
 
-### Development Setup
+**Visualization Improvements:**
+- [ ] Enhanced particle effects for protein activation flow
+- [ ] Improved timeline scrubbing UI/UX
+- [ ] Additional color schemes and themes
+- [ ] Performance optimizations for low-end hardware
+- [ ] Protein network layout algorithms (force-directed graphs)
 
-```bash
-# Clone repo
-git clone https://github.com/yourusername/genreg-visualizer.git
-cd genreg-visualizer
+**Educational Features:**
+- [ ] Tooltips explaining protein types and their functions
+- [ ] Guided tutorial mode with annotations
+- [ ] Export visualizations to video/GIF
+- [ ] Interactive quizzes about evolution concepts
+- [ ] Comparison view (side-by-side generations)
 
-# Create virtual environment
-python -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
+**Documentation:**
+- [ ] More detailed protein type explanations
+- [ ] Video walkthrough of the visualizer
+- [ ] Educational lesson plans for teachers
+- [ ] Translation to other languages
 
-# Install in development mode
-pip install -e .
+**Technical:**
+- [ ] Web-based version (convert to JavaScript/WebGL)
+- [ ] Mobile-friendly responsive design
+- [ ] Docker containerization
+- [ ] Automated testing for UI components
 
-# Run tests (if available)
-pytest
-```
+### What NOT to Contribute
+
+Please **do not** submit:
+- ❌ Alternative evolution engines or training code
+- ❌ Modified protein implementations
+- ❌ New simulation data (this repo uses official GENREG results)
+- ❌ Attempts to reverse-engineer the full GENREG system
+
+This repository is intentionally limited to visualization and education.
 
 ---
 
@@ -480,22 +578,36 @@ MIT License - see [LICENSE](LICENSE) file for details.
 ## FAQ
 
 **Q: Is this a real training system or just a visualization?**  
-A: Both! The evolution engine is a simplified but functional implementation of GENREG principles. It genuinely evolves organisms through selection pressure, but it's optimized for educational clarity rather than performance.
+A: This is a **visualization of real training results**. The evolution you're seeing is authentic—it was generated using the official GENREG protein system over 500 generations. However, this repository only contains the visualizer and pre-computed data, not the training system itself.
+
+**Q: Can I run my own evolution or train new agents?**  
+A: No, this is a **demonstration-only repository**. The full GENREG system (protein implementation, evolution engine) is not included. You can only view the pre-computed evolutionary history.
+
+**Q: Is the data genuine or synthetic?**  
+A: 100% genuine! The behaviors, protein activations, and trust scores you see are from actual evolution using the official GENREG system. Nothing was hand-tuned or faked for demonstration purposes.
 
 **Q: Can I use this to train agents for other games?**  
-A: Yes, with modifications. Replace the Snake game with your environment, adjust the sensory signals, and the evolution loop will work similarly. However, GENREG is primarily a research/educational tool, not a production RL framework.
+A: Not with this repository. This is a playback visualizer only. To train on other environments, you would need the full GENREG implementation (not included here).
+
+**Q: Why share just the visualizer without the training code?**  
+A: Educational purposes! The visualizer demonstrates GENREG principles and evolutionary learning concepts without requiring users to run computationally expensive evolution themselves. The pre-computed data lets anyone explore the results immediately.
 
 **Q: How does this compare to NEAT (NeuroEvolution of Augmenting Topologies)?**  
-A: NEAT evolves network topology (adding nodes and connections). GENREG uses a fixed protein template but evolves the parameters within each protein type. Both are neuroevolution approaches but with different evolutionary operators.
+A: NEAT evolves network topology (adding nodes and connections). GENREG uses a fixed protein template but evolves the parameters within each protein type. Both are neuroevolution approaches but with different evolutionary operators. The key GENREG innovation is the **dual-path system**: proteins compute trust (fitness), neural network computes actions.
 
 **Q: What's the difference between proteins and neurons?**  
-A: Proteins are **algorithmic processing units** (comparators, integrators, gates) that compute trust deltas. Neurons are simple weighted sums with activations that compute actions. Proteins = fitness signal, neurons = policy. They work in parallel on the same sensory input.
+A: **Proteins** are algorithmic processing units (comparators, integrators, gates) that compute trust deltas from environmental signals. **Neurons** are simple weighted sums with activations that compute movement actions. They work in parallel:
+- Proteins → Trust score → Evolutionary fitness
+- Neurons → Action probabilities → Behavior
 
 **Q: Why is the snake game so simple (10x10 grid)?**  
-A: Educational focus! Smaller grids make evolution faster and behavior changes more visible. The principles scale to larger, more complex environments.
+A: Smaller grids make evolution faster and behavioral changes more visible for educational purposes. The principles demonstrated here scale to larger, more complex environments.
 
-**Q: Can I train this with gradient descent instead?**  
-A: Technically yes—you could freeze the protein network and train the neural controller with policy gradients. But that defeats the purpose! GENREG demonstrates that evolution alone, without gradients, can produce intelligent behavior.
+**Q: Can I see the protein implementation code?**  
+A: The official GENREG protein code is not included in this repository. However, the `config.py` file documents the 6 protein types and their roles, and the visualizer shows their activations in real-time.
+
+**Q: What license is the pre-computed data under?**  
+A: The visualization code is MIT licensed. The pre-computed evolution data is provided for educational/demonstration purposes. Check the LICENSE file for details.
 
 ---
 
